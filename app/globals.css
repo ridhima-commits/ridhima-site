@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1a1740;
+  --color-paper: #f2f4f8;
+  --color-card: #ffffff;
+  --color-mute: #62667e;
+  --color-line: #d9dce8;
+  --color-violet: #5b4bff;
+  --color-marker: #ffe45c;
+  --color-stamp: #1f9d6b;
+
+  --font-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-ui: "Bricolage Grotesque", system-ui, sans-serif;
+
+  /* chart tokens, bklit-style */
+  --chart-1: #5b4bff;
+  --chart-grid: #d9dce8;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, button, nav, .ui { font-family: var(--font-display); }
+
+:focus-visible { outline: 3px solid var(--color-violet); outline-offset: 3px; border-radius: 6px; }
+
+/* highlighter mark — the recurring device */
+.marker {
+  background-image: linear-gradient(transparent 55%, var(--color-marker) 55%, var(--color-marker) 92%, transparent 92%);
+  background-repeat: no-repeat;
+  padding: 0 .1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
